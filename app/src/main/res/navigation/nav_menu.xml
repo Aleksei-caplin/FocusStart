@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_menu"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.focusstart.ui.fragments.ListFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_listFragment_to_singleFragment"
+            app:destination="@id/singleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singleFragment"
+        android:name="com.example.focusstart.ui.fragments.SingleFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_single">
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="value"
+            app:argType="string" />
+    </fragment>
+</navigation>

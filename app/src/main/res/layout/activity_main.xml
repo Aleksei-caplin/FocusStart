@@ -19,11 +19,21 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"/>
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/app_name"/>
         
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <fragment
+        android:id="@+id/nav_host"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_marginTop="?attr/actionBarSize"
+        app:navGraph="@navigation/nav_menu"
+        app:defaultNavHost="true"/>
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/dataContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -32,6 +42,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

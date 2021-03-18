@@ -8,7 +8,9 @@ import com.example.focusstart.R
 import com.example.focusstart.model.Currency
 import kotlinx.android.synthetic.main.currency_list_item.view.*
 
-class CurrencyListAdapter(private val currencyList: List<Currency>, val listener: (Currency) -> Unit): RecyclerView.Adapter<CurrencyListAdapter.CurrencyViewHolder>() {
+class CurrencyListAdapter(private val listener: (Currency) -> Unit): RecyclerView.Adapter<CurrencyListAdapter.CurrencyViewHolder>() {
+
+    private var currencyList: List<Currency> = listOf()
 
     class CurrencyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         fun bind(currencyList: Currency, listener: (Currency) -> Unit) = with(itemView) {
@@ -18,6 +20,12 @@ class CurrencyListAdapter(private val currencyList: List<Currency>, val listener
                 listener.invoke(currencyList)
             }
         }
+    }
+
+    fun updateList(data: List<Currency>) {
+
+        currencyList = data
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CurrencyViewHolder {

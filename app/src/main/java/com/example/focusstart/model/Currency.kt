@@ -8,6 +8,8 @@ data class CurrencyWrapper(
 )
 
 data class Currency(
+    @SerializedName("ID")
+    val id: String = "",
     @SerializedName("Name")
     val name: String = "",
     @SerializedName("Value")
